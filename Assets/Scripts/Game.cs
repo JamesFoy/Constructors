@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
+    [SerializeField]
+    MethodOverloading method;
+
     Enemy enemy;
     Enemy enemy2;
 
@@ -25,6 +28,16 @@ public class Game : MonoBehaviour
             enemy2 = new Enemy(5);
             enemy2Object.SetActive(true);
             Debug.Log("An enemy has spawned, it is a " + enemy2.Name + " with the health of " + enemy2.Health + " and gives a score of " + enemy2.Score + " if you kill it!!!");
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            method.Calculate(5, 10);
+        }
+
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            method.Calculate(4);
         }
     }
 }
